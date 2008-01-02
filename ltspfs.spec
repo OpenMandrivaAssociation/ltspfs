@@ -10,6 +10,7 @@ URL:		http://wiki.ltsp.org/twiki/bin/view/Ltsp/LtspFS
 Source:		%{name}-%{version}.tar.bz2
 BuildRequires:	libfuse-devel >= %{fuseversion}
 Requires:	fuse >= %{fuseversion}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 ltspfs is a remote filesystem consisting of two parts: 
