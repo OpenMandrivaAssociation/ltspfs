@@ -1,5 +1,3 @@
-%define fuseversion 2.7.4
-
 Summary: 	Tool used to mount local media on an Xterminal from the terminals serveur
 Name:		ltspfs
 Version:	0.5.8
@@ -8,14 +6,18 @@ License:	GPL
 Group:		System/Servers
 URL:		http://wiki.ltsp.org/twiki/bin/view/Ltsp/LtspFS
 Source:		%{name}-%{version}.tar.bz2
-BuildRequires:	fuse-devel >= %{fuseversion}
-Requires:	fuse >= %{fuseversion}
+BuildRequires:	fuse-devel
+Requires:	fuse
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %package -n ltspfsd
 Group:          System/Servers
 Summary:        LTSP file system, userspace FUSE module that runs on a server
-Requires:      xorg-x11-utils
+Requires:      x11-tools
+Requires:      x11-util-cf-files
+Requires:      x11-util-cf-files-debug
+Requires:      x11-util-macros
+Requires:      x11-util-modular
 
 %description
 ltspfs is a remote filesystem consisting of two parts:
