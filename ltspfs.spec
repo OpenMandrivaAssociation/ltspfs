@@ -6,7 +6,7 @@ License:	GPL
 Group:		System/Servers
 URL:		http://wiki.ltsp.org/twiki/bin/view/Ltsp/LtspFS
 Source:		%{name}-%{version}.tar.bz2
-BuildRequires:	fuse-devel
+BuildRequires:	fuse-devel fuse libx11-devel glib2-devel
 Requires:	fuse
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
