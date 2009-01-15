@@ -1,9 +1,9 @@
-%define fuseversion 2.5.2
+%define fuseversion 2.7.4
 
-Summary: 	Tool used to mount local media on an Xterminal from the terminals serveur	
+Summary: 	Tool used to mount local media on an Xterminal from the terminals serveur
 Name:		ltspfs
-Version:	0.1
-Release:	%mkrel 3
+Version:	0.5.8
+Release:	%mkrel 1
 License:	GPL
 Group:		System/Servers
 URL:		http://wiki.ltsp.org/twiki/bin/view/Ltsp/LtspFS
@@ -12,8 +12,13 @@ BuildRequires:	fuse-devel >= %{fuseversion}
 Requires:	fuse >= %{fuseversion}
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
+%package -n ltspfsd
+Group:          System/Servers
+Summary:        LTSP file system, userspace FUSE module that runs on a server
+Requires:      xorg-x11-utils
+
 %description
-ltspfs is a remote filesystem consisting of two parts: 
+ltspfs is a remote filesystem consisting of two parts:
   1) A network server daemon that runs on the LTSP terminal.
   2) A FUSE module that runs in user-space on the server, that connects with
      the daemon on the client.
@@ -31,28 +36,51 @@ The goals of ltspfs are:
       dealing with removable media, and integrate well with udev (LTSP's
       preferred device handling support).
 
+%description -n ltspfsd
+Fuse based remote filesystem daemon for LTSP thin clients
+ LtspFS is a remote filesystem consisting of two parts:
+ 1) A network server daemon that runs on the LTSP terminal.
+ 2) A FUSE module that runs in userspace on the server, that connects with
+ the daemon on the client.
+ This package contains the daemon to be run on the LTSP thin client.
+
 %prep
 
-%setup -q 
+%setup -q
 
 %build
-rm -rf .deps autom4te.cache
-
-%configure2_5x
-
-%make  
+%configure
+%make
 
 %install
 rm -rf %{buildroot}
-
-%makeinstall 
+mkdir -p $RPM_BUILD_ROOT%{_localstatedir}/run/devices/
+%make DESTDIR=%{buildroot} install
 
 %clean
 rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root)
-%doc AUTHORS COPYING ChangeLog README
-%attr(0755,root,root) %{_bindir}/%{name}
+%defattr(-,root,root,-)
+%doc COPYING ChangeLog
+%{_bindir}/ltspfs
+%attr(4755,root,root) %{_bindir}/lbmount
+%{_sbindir}/ltspfsmounter
+%{_mandir}/man1/ltspfs.1*
+%{_mandir}/man1/lbmount.1*
+%{_mandir}/man1/ltspfsmounter.1*
 
-
+%files -n ltspfsd
+%defattr(-,root,root,-)
+%{_bindir}/ltspfsd
+%{_sbindir}/cdpinger
+%{_sbindir}/ltspfs_mount
+%{_sbindir}/ltspfs_umount
+%{_sysconfdir}/udev/rules.d/88-ltsp.rules
+/lib/udev/ltspfs_entry
+%{_datadir}/ldm/
+%{_mandir}/man1/ltspfsd.1*
+%{_mandir}/man1/cdpinger.1*
+%{_mandir}/man1/ltspfs_mount.1*
+%{_mandir}/man1/ltspfs_umount.1*
+%dir %{_localstatedir}/run/devices/
