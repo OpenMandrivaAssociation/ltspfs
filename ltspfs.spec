@@ -1,11 +1,11 @@
 Summary: 	Tool used to mount local media on an Xterminal from the terminals serveur
 Name:		ltspfs
-Version:	0.5.8
+Version:	0.5.12
 Release:	%mkrel 1
 License:	GPL
 Group:		System/Servers
 URL:		http://wiki.ltsp.org/twiki/bin/view/Ltsp/LtspFS
-Source:		%{name}-%{version}.tar.bz2
+Source:		http://ftp.fr.debian.org/debian/pool/main/l/ltspfs/%{name}_%{version}.orig.tar.gz
 BuildRequires:	fuse-devel fuse libx11-devel glib2-devel
 Requires:	fuse
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -81,6 +81,8 @@ rm -rf %{buildroot}
 %{_sysconfdir}/udev/rules.d/88-ltsp.rules
 /lib/udev/ltspfs_entry
 %{_datadir}/ldm/
+%{_datadir}/ltsp/xinitrc.d/I05-set-ltspfs_token
+%{_datadir}/ltsp/xinitrc.d/I10-delayedmounter
 %{_mandir}/man1/ltspfsd.1*
 %{_mandir}/man1/cdpinger.1*
 %{_mandir}/man1/ltspfs_mount.1*
