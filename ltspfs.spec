@@ -1,6 +1,6 @@
 Summary: 	Tool used to mount local media on an Xterminal from the terminals serveur
 Name:		ltspfs
-Version:	0.5.12
+Version:	0.5.13
 Release:	%mkrel 1
 License:	GPL
 Group:		System/Servers
@@ -82,7 +82,6 @@ rm -rf %{buildroot}
 /lib/udev/ltspfs_entry
 %{_datadir}/ldm/
 %{_datadir}/ltsp/xinitrc.d/I05-set-ltspfs_token
-%{_datadir}/ltsp/xinitrc.d/I10-delayedmounter
 %{_mandir}/man1/ltspfsd.1*
 %{_mandir}/man1/cdpinger.1*
 %{_mandir}/man1/ltspfs_mount.1*
