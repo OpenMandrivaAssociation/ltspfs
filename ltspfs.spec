@@ -1,7 +1,7 @@
 Summary: 	Tool used to mount local media on an Xterminal from the terminals serveur
 Name:		ltspfs
 Version:	0.6
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPL
 Group:		System/Servers
 URL:		http://wiki.ltsp.org/twiki/bin/view/Ltsp/LtspFS
@@ -15,7 +15,7 @@ Group:          System/Servers
 Summary:        LTSP file system, userspace FUSE module that runs on a server
 Requires:      x11-tools
 Requires:      x11-util-cf-files
-Requires:      x11-util-cf-files-debug
+#Requires:      x11-util-cf-files-debug
 Requires:      x11-util-macros
 Requires:      x11-util-modular
 
