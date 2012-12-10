@@ -87,3 +87,57 @@ rm -rf %{buildroot}
 %{_mandir}/man1/ltspfs_mount.1*
 %{_mandir}/man1/ltspfs_umount.1*
 %dir %{_localstatedir}/run/devices/
+
+
+%changelog
+* Wed Mar 16 2011 Stéphane Téletchéa <steletch@mandriva.org> 0.7-1mdv2011.0
++ Revision: 645298
+- update to new version 0.7
+
+* Thu Feb 17 2011 Sergio Rafael Lemke <sergio@mandriva.com> 0.6-3
++ Revision: 638257
+- Remove requires on x11-util-cf-files-debug
+
+* Mon Dec 06 2010 Oden Eriksson <oeriksson@mandriva.com> 0.6-2mdv2011.0
++ Revision: 612776
+- the mass rebuild of 2010.1 packages
+
+* Fri Feb 19 2010 Frederik Himpe <fhimpe@mandriva.org> 0.6-1mdv2010.1
++ Revision: 508527
+- update to new version 0.6
+
+* Mon Jan 18 2010 Frederik Himpe <fhimpe@mandriva.org> 0.5.14-1mdv2010.1
++ Revision: 493274
+- update to new version 0.5.14
+
+* Mon Jul 20 2009 Frederik Himpe <fhimpe@mandriva.org> 0.5.13-1mdv2010.0
++ Revision: 398120
+- Update to new version 0.5.13
+
+* Mon Jun 08 2009 Frederik Himpe <fhimpe@mandriva.org> 0.5.12-1mdv2010.0
++ Revision: 384103
+- Update to new version 0.5.12
+
+* Thu Jan 15 2009 Jérôme Soyer <saispo@mandriva.org> 0.5.8-1mdv2009.1
++ Revision: 329811
+- Fix BR
+- Fix Requiers
+- New upstream release
+
+* Tue Jun 17 2008 Thierry Vignaud <tv@mandriva.org> 0.1-3mdv2009.0
++ Revision: 222692
+- buildrequires fuse-devel instead of libfuse-devel
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+
+* Wed Feb 07 2007 Oden Eriksson <oeriksson@mandriva.com> 0.1-1mdv2007.0
++ Revision: 117099
+- Import ltspfs
+
+* Fri Sep 29 2006 Oden Eriksson <oeriksson@mandriva.com> 0.1-1mdk
+- initial Mandriva package (mille-xterm import)
+
