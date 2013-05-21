@@ -6,7 +6,7 @@ License:	GPL
 Group:		System/Servers
 URL:		http://wiki.ltsp.org/twiki/bin/view/Ltsp/LtspFS
 Source:		http://ftp.fr.debian.org/debian/pool/main/l/ltspfs/%{name}_%{version}.orig.tar.gz
-BuildRequires:	fuse-devel fuse libx11-devel glib2-devel
+BuildRequires:	fuse-devel fuse libx11-devel pkgconfig(glib-2.0)
 Requires:	fuse
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
