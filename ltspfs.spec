@@ -1,7 +1,7 @@
 Summary: 	Tool used to mount local media on an Xterminal from the terminals serveur
 Name:		ltspfs
 Version:	1.3
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		System/Servers
 Url:		http://wiki.ltsp.org/twiki/bin/view/Ltsp/LtspFS
