@@ -4,7 +4,7 @@ Version:	1.3
 Release:	2
 License:	GPLv2+
 Group:		System/Servers
-Url:		http://wiki.ltsp.org/twiki/bin/view/Ltsp/LtspFS
+Url:		https://wiki.ltsp.org/twiki/bin/view/Ltsp/LtspFS
 Source0:	http://ftp.fr.debian.org/debian/pool/main/l/ltspfs/%{name}_%{version}.orig.tar.gz
 BuildRequires:	fuse
 BuildRequires:	pkgconfig(fuse)
